@@ -5,11 +5,12 @@ const parseArgs = () => {
         const name = args[i].replace('--', '')
         finalArgs[name] = args[i + 1]
     }
-
+    const options = [];
     for (let key in finalArgs) {
         let value = finalArgs[key]
-        console.log(`${key} is ${value}`)
+        options.push(`${key} is ${value}`)
     }
+    console.log(options.join(', '))
 };
 
 parseArgs();
