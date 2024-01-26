@@ -1,7 +1,10 @@
 import fs from 'fs'
+import {fileURLToPath} from "url";
+import path from "path";
 
 const read = async () => {
-    const filePath = './files/fileToRead.txt'
+    const __dirname = path.dirname(fileURLToPath(import.meta.url));
+    const filePath = path.join(__dirname, 'files','fileToRead.txt')
     const readStream = fs.createReadStream(filePath);
 
     readStream.on('data', (chunk) => {

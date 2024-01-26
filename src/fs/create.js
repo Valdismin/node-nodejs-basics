@@ -1,12 +1,15 @@
 import fs from 'fs'
+import {fileURLToPath} from "url";
+import path from "path";
 
 const create = async () => {
-    const path = './files/fresh.txt'
+    const __dirname = path.dirname(fileURLToPath(import.meta.url));
+    const creationPath = path.join(__dirname, 'files', 'fresh.txt')
 
-    fs.access(path, fs.constants.F_OK, (e) => {
+    fs.access(creationPath, fs.constants.F_OK, (e) => {
         if (e) {
             if (e.code === 'ENOENT') {
-                fs.writeFile(path, 'I am fresh and young', () => {
+                fs.writeFile(creationPath, 'I am fresh and young', () => {
                 })
             }
         } else {

@@ -1,9 +1,11 @@
 import fs from 'fs'
+import{fileURLToPath} from "url";
+import path from "path";
 
 const rename = async () => {
-
-    const wrongFilePath = './files/wrongFilename.txt'
-    const correctFilePath = './files/properFilename.md'
+    const __dirname = path.dirname(fileURLToPath(import.meta.url));
+    const wrongFilePath = path.join(__dirname, 'files','wrongFilename.txt')
+    const correctFilePath = path.join(__dirname, 'files','properFilename.txt')
 
     fs.access(wrongFilePath, fs.constants.F_OK, (e) => {
         if (e?.code === 'ENOENT') {
