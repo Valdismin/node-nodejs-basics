@@ -1,5 +1,6 @@
+import {Transform} from 'stream'
+
 const transform = async () => {
-    const { Transform } = await import('stream')
     const reverseText = () => new Transform({
         transform(chunk, encoding, callback) {
             callback(null, chunk.toString().split('').reverse().join());

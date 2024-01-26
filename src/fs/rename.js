@@ -1,5 +1,6 @@
+import fs from 'fs'
+
 const rename = async () => {
-    const fs = await import('fs')
 
     const wrongFilePath = './files/wrongFilename.txt'
     const correctFilePath = './files/properFilename.md'

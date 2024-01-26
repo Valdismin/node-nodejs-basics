@@ -1,6 +1,7 @@
+import fs from 'fs'
+import crypto from 'crypto'
+
 const calculateHash = async () => {
-    const fs = await import('fs');
-    const crypto = await import('crypto');
     const hash = crypto.createHash('sha256');
     const stream = fs.createReadStream('./files/fileToCalculateHashFor.txt')
 

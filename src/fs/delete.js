@@ -1,5 +1,5 @@
+import fs from 'fs'
 const remove = async () => {
-    const fs = await import('fs')
 
     const removeFilePath = './files/fileToRemove.txt'
 

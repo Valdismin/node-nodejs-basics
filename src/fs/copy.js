@@ -1,6 +1,6 @@
-const copy = async () => {
-    const fs = await import('fs')
+import fs from 'fs'
 
+const copy = async () => {
     const path = './files'
     const destinationPath = './files_copy'
 

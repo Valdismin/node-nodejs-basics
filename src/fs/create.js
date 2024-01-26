@@ -1,5 +1,6 @@
+import fs from 'fs'
+
 const create = async () => {
-    const fs = await import('fs')
     const path = './files/fresh.txt'
 
     fs.access(path, fs.constants.F_OK, (e) => {

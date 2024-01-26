@@ -1,5 +1,7 @@
+import fs from 'fs'
+
 const list = async () => {
-    const fs = await import('fs')
+
 
     const folderToReadPath = './files'
 
